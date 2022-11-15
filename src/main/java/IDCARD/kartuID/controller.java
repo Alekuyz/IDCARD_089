@@ -26,7 +26,7 @@ public class controller {
     @RequestMapping("/sendData")
 //    @ResponseBody
     public String getData(@RequestParam("mytext") String getText,
-                            @RequestParam("nik") String getNik,
+                            @RequestParam("nim") String getNIM,
                             @RequestParam("tanggal")    
                             @DateTimeFormat(pattern="yyyy-MM-dd") Date date, 
                             @RequestParam("myimage") MultipartFile image, Model model)
@@ -38,10 +38,10 @@ public class controller {
         String blob = "data:image/jpeg;base64,".concat(img);
         
         model.addAttribute("mytext", getText);
-        model.addAttribute("nik", getNik);
+        model.addAttribute("nim", getNIM);
         model.addAttribute("tanggal", newTanggal);
         model.addAttribute("img", blob);
 
-        return  "idcard"; 
+        return  "Hasil"; 
     }
 }
